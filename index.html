@@ -25,17 +25,13 @@
             <!-- FormSubmit Action -->
             <form action="https://formsubmit.co/fixtheek@gmail.com" method="POST" enctype="multipart/form-data" class="custom-form">
                 
-                <!-- FormSubmit Settings for Email & Confirmation -->
+                <!-- FormSubmit Settings -->
                 <input type="hidden" name="_subject" value="New Marketing Head Application Received!">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
-                
-                <!-- Yeh user ko form submit hone ke baad ek accha Thank You page dikhayega -->
                 <input type="hidden" name="_next" value="https://formsubmit.co/thankyou.html">
-                
-                <!-- Yeh user ke email par automatic confirmation bhejega (User ko form me apna email bhi dalna hoga, isliye niche email field bhi add kar diya hai) -->
                 <input type="hidden" name="_autoresponse" value="Namaste! Aapka Marketing Head application safaltapurvak mil gaya hai. Hamari team iski jaanch kar rahi hai aur jald hi aapse sampark karegi. - Fixtheek">
-
+                
                 <!-- Personal Details -->
                 <div class="form-section-title">Personal Information</div>
                 
@@ -44,7 +40,6 @@
                     <input type="text" id="name" name="name" required placeholder="Enter your full name">
                 </div>
 
-                <!-- User ka Email field zaroori hai taaki system use auto-reply bhej sake -->
                 <div class="form-group">
                     <label for="email">Email Address (For Confirmation) <span class="required">*</span></label>
                     <input type="email" id="email" name="email" required placeholder="Enter your email address">
@@ -77,7 +72,7 @@
                     <textarea id="address" name="address" rows="3" required placeholder="Enter your complete residential address"></textarea>
                 </div>
 
-                <!-- Identification Details -->
+                <!-- Identification & Document Uploads -->
                 <div class="form-section-title">Identification & Documents</div>
                 
                 <div class="form-row">
@@ -107,17 +102,18 @@
                     </div>
                 </div>
 
-                <!-- Digital Signature Section -->
-                <div class="form-section-title">Digital Signature</div>
-                <div class="form-group">
-                    <label>Sign inside the box below <span class="required">*</span></label>
-                    <div class="signature-pad-container">
-                        <canvas id="signatureCanvas" width="450" height="150"></canvas>
-                        <div class="sig-actions">
-                            <button type="button" id="clearSig" class="secondary-btn">Clear Signature</button>
-                        </div>
+                <!-- NEW ADDITIONS: Live Photo & Signature Upload -->
+                <div class="form-section-title">Candidate Verification & Signature</div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="live_photo">Candidate Live Photo / Selfie (Upload) <span class="required">*</span></label>
+                        <input type="file" id="live_photo" name="live_photo" accept="image/*" required class="file-input">
                     </div>
-                    <input type="hidden" id="signatureData" name="signatureData" required>
+                    <div class="form-group half">
+                        <label for="signature_file">Signature Document / Photo (Upload) <span class="required">*</span></label>
+                        <input type="file" id="signature_file" name="signature_file" accept="image/*,application/pdf" required class="file-input">
+                    </div>
                 </div>
 
                 <!-- Legal Terms & Conditions Box -->
